@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Tsrot Space</title>
+  <subtitle>This is tsrot blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://genhaoer.github.io/"/>
+  <updated>2016-02-24T10:40:19.002Z</updated>
+  <id>http://genhaoer.github.io/</id>
+  
+  <author>
+    <name>Tsrot</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一篇博客</title>
+    <link href="http://genhaoer.github.io/2016/02/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://genhaoer.github.io/2016/02/24/第一篇博客/</id>
+    <published>2016-02-24T09:59:39.000Z</published>
+    <updated>2016-02-24T10:40:19.002Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;br&gt;大家好，很高兴你能看我的博客。&lt;/the&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="我的日志" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="心得感受" scheme="http://genhaoer.github.io/tags/%E5%BF%83%E5%BE%97%E6%84%9F%E5%8F%97/"/>
+    
+  </entry>
+  
+</feed>
