@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://genhaoer.github.io/"/>
-  <updated>2016-03-02T13:38:43.800Z</updated>
+  <updated>2016-03-02T13:46:25.548Z</updated>
   <id>http://genhaoer.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://genhaoer.github.io/2016/02/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://genhaoer.github.io/2016/02/24/第一篇博客/</id>
     <published>2016-02-24T09:59:39.000Z</published>
-    <updated>2016-03-02T13:38:43.800Z</updated>
+    <updated>2016-03-02T13:46:25.548Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。&lt;br&gt;这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
-&lt;h3 id=&quot;1、准备工作&quot;&gt;&lt;a href=&quot;#1、准备工作&quot; class=&quot;headerlink&quot; title=&quot;1、准备工作&quot;&gt;&lt;/a&gt;1、准备工作&lt;/h3&gt;&lt;p&gt;（1）安装Git；&lt;br&gt;（2）安装nodejs；&lt;br&gt;（3）注册github；&lt;br&gt;（4）注册Nitrous（在国内注册时可能会输入不了验证码，导致提交按钮不能点。你可以使用翻墙软件或使用代理）；&lt;/p&gt;
+&lt;h3 id=&quot;1、准备工作&quot;&gt;&lt;a href=&quot;#1、准备工作&quot; class=&quot;headerlink&quot; title=&quot;1、准备工作&quot;&gt;&lt;/a&gt;1、准备工作&lt;/h3&gt;&lt;p&gt;（1）安装Git；&lt;br&gt;（2）安装NodeJS；&lt;br&gt;（3）注册Github；&lt;br&gt;（4）注册Nitrous（在国内注册时可能会输入不了验证码，导致提交按钮不能点。你可以使用翻墙软件或使用代理）；&lt;/p&gt;
 &lt;h3 id=&quot;2、布置源码&quot;&gt;&lt;a href=&quot;#2、布置源码&quot; class=&quot;headerlink&quot; title=&quot;2、布置源码&quot;&gt;&lt;/a&gt;2、布置源码&lt;/h3&gt;&lt;p&gt;在nitrous中有git，所以如果你在使用nitrous就不用安装git和nodejs，直接使用就可以了。&lt;br&gt;（1）在nitrous中新建nodejs项目。&lt;br&gt;（2）注册github，新建创库，主意创库名一定要：用户名.github.io，否则目录不会建在根目录下，在setting中设置生成github pages。然后在nitrous中关联github。&lt;br&gt;（3）进入项目里在底部的命令面板中下载安装hexo&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;（4）接下来你可以去安装主题theme了，hexo官网(&lt;a href=&quot;https://hexo.io)上有好多主题可以自己去下载安装，当然你也可以自己去写主题，官网文档里有介绍，在这里我就不赘述了。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io)上有好多主题可以自己去下载安装，当然你也可以自己去写主题，官网文档里有介绍，在这里我就不赘述了。&lt;/a&gt;&lt;br&gt;（5）安装完主题你就可以写博客了。这里的博客用的是Markdown语法写的，Markdown语法很简洁，大家可以去学一下。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new title&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;（6）接下来就是布置博客了&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -34,7 +34,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。&lt;br&gt;这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。&lt;br&gt;
+      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。&lt;br&gt;
     
     </summary>
     
