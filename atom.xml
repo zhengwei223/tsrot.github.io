@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://genhaoer.github.io/"/>
-  <updated>2016-03-03T15:03:21.876Z</updated>
+  <updated>2016-03-03T15:12:21.589Z</updated>
   <id>http://genhaoer.github.io/</id>
   
   <author>
@@ -20,81 +20,13 @@
     <link href="http://genhaoer.github.io/2016/03/03/Javascript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BURL/"/>
     <id>http://genhaoer.github.io/2016/03/03/Javascript静态页面值传递之URL/</id>
     <published>2016-03-03T14:45:44.000Z</published>
-    <updated>2016-03-03T15:03:21.876Z</updated>
+    <updated>2016-03-03T15:12:21.589Z</updated>
     
     <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
-&lt;h3 id=&quot;JavaScript能通过URL进行传值-把要传递的信息接在URL上&quot;&gt;&lt;a href=&quot;#JavaScript能通过URL进行传值-把要传递的信息接在URL上&quot; class=&quot;headerlink&quot; title=&quot;JavaScript能通过URL进行传值.把要传递的信息接在URL上.&quot;&gt;&lt;/a&gt;JavaScript能通过URL进行传值.把要传递的信息接在URL上.&lt;/h3&gt;&lt;p&gt;post.html&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;username&amp;quot;&amp;gt;
-&amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;sex&amp;quot;&amp;gt;
-&amp;lt;input type=&amp;quot;button&amp;quot; value=&amp;quot;Post&amp;quot;&amp;gt;
-&amp;lt;script language=&amp;quot;javascript&amp;quot; &amp;gt;
-function Post()
-{
-    //单个值 Read.htm?username=baobao;
-    //多全值 Read.htm?username=baobao&amp;amp;sex=male;
-    url = &amp;quot;Read.htm?username=&amp;quot;+escape(document.all.username.value);
-    url += &amp;quot;&amp;amp;sex=&amp;quot; + escape(document.all.sex.value);
-    location.href=url;
-}
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;read.html&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script language=&amp;quot;javascript&amp;quot; &amp;gt;
-/*
-*--------------- Read.htm -----------------
-* Request[key]
-* 功能:实现ASP的取得URL字符串,Request(&amp;quot;AAA&amp;quot;)
-* 参数:key,字符串.
-* 实例:alert(Request[&amp;quot;AAA&amp;quot;])
-*--------------- Request.htm -----------------
-*/
-var url=location.search;
-var Request = new Object();
-if(url.indexOf(&amp;quot;?&amp;quot;)!=-1)
-{
-    var str = url.substr(1)　//去掉?号
-    　　strs = str.split(&amp;quot;&amp;amp;&amp;quot;);
-    for(var i=0;i&amp;lt;strs.length;i++)
-    {
-     　 Request[strs[i ].split(&amp;quot;=&amp;quot;)[0]]=unescape(strs[ i].split(&amp;quot;=&amp;quot;)[1]);
-    }
-}
-alert(Request[&amp;quot;username&amp;quot;])
-alert(Request[&amp;quot;sex&amp;quot;])
-&amp;lt;/script&amp;gt;
-
-&amp;lt;script language=&amp;quot;JavaScript&amp;quot;&amp;gt;
-&amp;lt;!--
-function Request(strName){
-    var strHref = &amp;quot;blog.xieliqun.com/index.html?a=1&amp;amp;b=1&amp;amp;c=测试测试&amp;quot;;
-    var intPos = strHref.indexOf(&amp;quot;?&amp;quot;);
-    var strRight = strHref.substr(intPos + 1);
-    var arrTmp = strRight.split(&amp;quot;&amp;amp;&amp;quot;);
-    for(var i = 0; i &amp;lt; arrTmp.length; i++)
-    {
-    var arrTemp = arrTmp[i ].split(&amp;quot;=&amp;quot;);
-    if(arrTemp[0].toUpperCase() == strName.toUpperCase()) return arrTemp[1];
-    }
-    return &amp;quot;&amp;quot;;
-}
-alert(Request(&amp;quot;a&amp;quot;));
-alert(Request(&amp;quot;b&amp;quot;));
-alert(Request(&amp;quot;c&amp;quot;));
-//--&amp;gt;
-&amp;lt;/script&amp;gt;
-
-&amp;lt;script&amp;gt;
-String.prototype.getQuery = function(name){
-    var reg = new RegExp(&amp;quot;(^|&amp;amp;)&amp;quot;+ name +&amp;quot;=([^&amp;amp;]*)(&amp;amp;|$)&amp;quot;);
-    var r = this.substr(this.indexOf(&amp;quot;?&amp;quot;)+1).match(reg);
-    if (r!=null) return unescape(r[2]); return null;
-}
-var str =&amp;quot;blog.xieliqun.com/index.htm?a=1&amp;amp;b=1&amp;amp;c=测试测试&amp;quot;;
-alert(str.getQuery(&amp;quot;a&amp;quot;));
-alert(str.getQuery(&amp;quot;b&amp;quot;));
-alert(str.getQuery(&amp;quot;c&amp;quot;));
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;优点:取值方便.可以跨域.&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;缺点:值长度有限制&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;JavaScript能通过URL进行传值-把要传递的信息接在URL上&quot;&gt;&lt;a href=&quot;#JavaScript能通过URL进行传值-把要传递的信息接在URL上&quot; class=&quot;headerlink&quot; title=&quot;JavaScript能通过URL进行传值.把要传递的信息接在URL上.&quot;&gt;&lt;/a&gt;JavaScript能通过URL进行传值.把要传递的信息接在URL上.&lt;/h3&gt;&lt;p&gt;post.html&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input &lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt; name=&lt;span class=&quot;string&quot;&gt;&quot;username&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input &lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt; name=&lt;span class=&quot;string&quot;&gt;&quot;sex&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input &lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; value=&lt;span class=&quot;string&quot;&gt;&quot;Post&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script language=&lt;span class=&quot;string&quot;&gt;&quot;javascript&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;Post&lt;/span&gt;&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//单个值 Read.htm?username=baobao;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//多全值 Read.htm?username=baobao&amp;amp;sex=male;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url = &lt;span class=&quot;string&quot;&gt;&quot;Read.htm?username=&quot;&lt;/span&gt;+escape(document.all.username.value);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url += &lt;span class=&quot;string&quot;&gt;&quot;&amp;amp;sex=&quot;&lt;/span&gt; + escape(document.all.sex.value);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;location.href=url;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;read.html&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script language=&lt;span class=&quot;string&quot;&gt;&quot;javascript&quot;&lt;/span&gt; &amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*--------------- Read.htm -----------------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Request[key]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* 功能:实现ASP的取得URL字符串,Request(&lt;span class=&quot;string&quot;&gt;&quot;AAA&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* 参数:key,字符串.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* 实例:alert(Request[&lt;span class=&quot;string&quot;&gt;&quot;AAA&quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*--------------- Request.htm -----------------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var url=location.search;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var Request = new Object();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(url.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;?&quot;&lt;/span&gt;)!=-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var str = url.substr(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)　//去掉?号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;strs = str.split(&lt;span class=&quot;string&quot;&gt;&quot;&amp;amp;&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(var i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;strs.length;i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Request[strs[i ].split(&lt;span class=&quot;string&quot;&gt;&quot;=&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]]=unescape(strs[ i].split(&lt;span class=&quot;string&quot;&gt;&quot;=&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(Request[&lt;span class=&quot;string&quot;&gt;&quot;username&quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(Request[&lt;span class=&quot;string&quot;&gt;&quot;sex&quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script language=&lt;span class=&quot;string&quot;&gt;&quot;JavaScript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!--&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; Request(strName)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var strHref = &lt;span class=&quot;string&quot;&gt;&quot;blog.xieliqun.com/index.html?a=1&amp;amp;b=1&amp;amp;c=测试测试&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var intPos = strHref.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;?&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var strRight = strHref.substr(intPos + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var arrTmp = strRight.split(&lt;span class=&quot;string&quot;&gt;&quot;&amp;amp;&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(var i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; arrTmp.length; i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var arrTemp = arrTmp[i ].split(&lt;span class=&quot;string&quot;&gt;&quot;=&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(arrTemp[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].toUpperCase() == strName.toUpperCase()) &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; arrTemp[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(Request(&lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(Request(&lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(Request(&lt;span class=&quot;string&quot;&gt;&quot;c&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//--&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;String.prototype.getQuery = &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(name)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var reg = new RegExp(&lt;span class=&quot;string&quot;&gt;&quot;(^|&amp;amp;)&quot;&lt;/span&gt;+ name +&lt;span class=&quot;string&quot;&gt;&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var r = this.substr(this.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;?&quot;&lt;/span&gt;)+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;).match(reg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (r!=null) &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; unescape(r[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]); &lt;span class=&quot;built_in&quot;&gt;return&lt;/span&gt; null;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var str =&lt;span class=&quot;string&quot;&gt;&quot;blog.xieliqun.com/index.htm?a=1&amp;amp;b=1&amp;amp;c=测试测试&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(str.getQuery(&lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(str.getQuery(&lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(str.getQuery(&lt;span class=&quot;string&quot;&gt;&quot;c&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt;优点:取值方便.可以跨域.&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;缺点:值长度有限制&lt;/span&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
