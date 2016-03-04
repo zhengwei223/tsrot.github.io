@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第一篇博客 | Tsrot Space</title>
+  <title>JavaScript静态页面值传递之cookie | Tsrot Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。">
+  <meta name="description" content="我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="http://genhaoer.github.io/2016/02/24/第一篇博客/index.html">
+<meta property="og:title" content="JavaScript静态页面值传递之cookie">
+<meta property="og:url" content="http://genhaoer.github.io/2016/03/04/JavaScript静态页面值传递之cookie/index.html">
 <meta property="og:site_name" content="Tsrot Space">
-<meta property="og:description" content="这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。">
-<meta property="og:updated_time" content="2016-03-02T13:46:25.548Z">
+<meta property="og:description" content="我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···">
+<meta property="og:updated_time" content="2016-03-04T14:51:25.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。">
+<meta name="twitter:title" content="JavaScript静态页面值传递之cookie">
+<meta name="twitter:description" content="我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···">
   
     <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
   
@@ -220,11 +220,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript静态页面值传递之cookie" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/24/第一篇博客/" class="article-date">
-      <time datetime="2016-02-24T09:59:39.000Z" itemprop="datePublished">2016-02-24</time>
+      <a href="/2016/03/04/JavaScript静态页面值传递之cookie/" class="article-date">
+      <time datetime="2016-03-04T14:05:48.000Z" itemprop="datePublished">2016-03-04</time>
 </a>
     </div>
   
@@ -237,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一篇博客
+      JavaScript静态页面值传递之cookie
     </h1>
   
 
@@ -246,13 +246,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/我的日志/">我的日志</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心得感受/">心得感受</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人笔记/">个人笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端总结/">前端总结</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -262,14 +262,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>这是我的第一篇博客。这是一个用hexo搭建的博客系统。我把运行在了github page上，另外我把hexo源码运行在了nitrous上。这样有利于在云端布置博客，不用每次换台电脑，都需要重新配置环境。因为nitrous的服务器在国外访问有时可能会卡顿。<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h3 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h3><p>（1）安装Git；<br>（2）安装NodeJS；<br>（3）注册Github；<br>（4）注册Nitrous（在国内注册时可能会输入不了验证码，导致提交按钮不能点。你可以使用翻墙软件或使用代理）；</p>
-<h3 id="2、布置源码"><a href="#2、布置源码" class="headerlink" title="2、布置源码"></a>2、布置源码</h3><p>在nitrous中有git，所以如果你在使用nitrous就不用安装git和nodejs，直接使用就可以了。<br>（1）在nitrous中新建nodejs项目。<br>（2）注册github，新建创库，主意创库名一定要：用户名.github.io，否则目录不会建在根目录下，在setting中设置生成github pages。然后在nitrous中关联github。<br>（3）进入项目里在底部的命令面板中下载安装hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -g</span><br><span class="line"></span><br><span class="line">$ hexo init blog</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line"></span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>（4）接下来你可以去安装主题theme了，hexo官网(<a href="https://hexo.io)上有好多主题可以自己去下载安装，当然你也可以自己去写主题，官网文档里有介绍，在这里我就不赘述了。" target="_blank" rel="external">https://hexo.io)上有好多主题可以自己去下载安装，当然你也可以自己去写主题，官网文档里有介绍，在这里我就不赘述了。</a><br>（5）安装完主题你就可以写博客了。这里的博客用的是Markdown语法写的，Markdown语法很简洁，大家可以去学一下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new title</span><br></pre></td></tr></table></figure></p>
-<p>（6）接下来就是布置博客了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>（7）好了接下来你就可以用 用户名.github.io 访问你的网站了。</p>
-<p>只是粗略的介绍了下如何搭建hexo博客，如果你有兴趣可以在下面给我留言或者给我发邮件（右边有我邮箱）。</p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""><br>Cookie是浏览器存储少量命名数据.<br>它与某个特定的网页或网站关联在一起.<br>Cookie用来给浏览器提供内存,<br>以便脚本和服务器程序可以在一个页面中使用另一个页面的输入数据.</the></p>
+<p>post.html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"txt1"</span>&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"Post"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;script language=<span class="string">"javascript"</span> &gt;</span><br><span class="line"><span class="keyword">function</span> <span class="built_in">set</span>Cookie(name,value)</span><br><span class="line">&#123;</span><br><span class="line">/*</span><br><span class="line">*--------------- <span class="built_in">set</span>Cookie(name,value) -----------------</span><br><span class="line">* <span class="built_in">set</span>Cookie(name,value)</span><br><span class="line">* 功能:设置得变量name的值</span><br><span class="line">* 参数:name,字符串;value,字符串.</span><br><span class="line">* 实例:<span class="built_in">set</span>Cookie(<span class="string">'username'</span>,<span class="string">'baobao'</span>)</span><br><span class="line">*--------------- <span class="built_in">set</span>Cookie(name,value) -----------------</span><br><span class="line">*/</span><br><span class="line">   var Days = <span class="number">30</span>; //此 cookie 将被保存 <span class="number">30</span> 天</span><br><span class="line">　　var exp　= new Date();</span><br><span class="line">   exp.setTime(exp.getTime() + Days*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>);</span><br><span class="line">   document.cookie = name + <span class="string">"="</span>+ escape (value) + <span class="string">";expires="</span> + exp.toGMTString();</span><br><span class="line">   location.href = <span class="string">"read.html"</span>; //接收页面.</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>read.html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">"javascript"</span> &gt;</span><br><span class="line"><span class="keyword">function</span> getCookie(name)</span><br><span class="line">&#123;</span><br><span class="line">/*</span><br><span class="line">*--------------- getCookie(name) -----------------</span><br><span class="line">* getCookie(name)</span><br><span class="line">* 功能:取得变量name的值</span><br><span class="line">* 参数:name,字符串.</span><br><span class="line">* 实例:alert(getCookie(<span class="string">"baobao"</span>));</span><br><span class="line">*--------------- getCookie(name) -----------------</span><br><span class="line">*/</span><br><span class="line">   var arr = document.cookie.match(new RegExp(<span class="string">"(^| )"</span>+name+<span class="string">"=([^;]*)(;|$)"</span>));</span><br><span class="line">   <span class="keyword">if</span>(arr !=null) <span class="built_in">return</span> unescape(arr[<span class="number">2</span>]); <span class="built_in">return</span> null;</span><br><span class="line">&#125;</span><br><span class="line">alert(getCookie(<span class="string">"baobao"</span>));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><span style="color:red">优点:可以在同源内的任意网页内访问.生命期可以设置.</span><br><span style="color:red">缺点:值长度有限制.</span></p>
 
       
     </div>
@@ -278,13 +275,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/24/第一篇博客/">第一篇博客</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/04/JavaScript静态页面值传递之cookie/">JavaScript静态页面值传递之cookie</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
-        <p><span>发布时间:</span>2016年02月24日 - 09时59分</p>
-        <p><span>最后更新:</span>2016年03月02日 - 13时46分</p>
+        <p><span>发布时间:</span>2016年03月04日 - 14时05分</p>
+        <p><span>最后更新:</span>2016年03月04日 - 14时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/24/第一篇博客/" title="第一篇博客">http://genhaoer.github.io/2016/02/24/第一篇博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://genhaoer.github.io/2016/02/24/第一篇博客/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/04/JavaScript静态页面值传递之cookie/" title="JavaScript静态页面值传递之cookie">http://genhaoer.github.io/2016/03/04/JavaScript静态页面值传递之cookie/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://genhaoer.github.io/2016/03/04/JavaScript静态页面值传递之cookie/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -297,12 +294,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
+        
+            <div id="article-nav-older" class="article-nav-title">
                 <a href="/2016/03/03/Javascript静态页面值传递之URL/">
                     Javascript静态页面值传递之URL
                 </a>
             </div>
-        
         
     </nav>
 
@@ -311,7 +308,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、准备工作"><span class="toc-number">1.</span> <span class="toc-text">1、准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、布置源码"><span class="toc-number">2.</span> <span class="toc-text">2、布置源码</span></a></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -375,7 +372,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/24/第一篇博客/" data-title="第一篇博客" data-url="http://genhaoer.github.io/2016/02/24/第一篇博客/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/04/JavaScript静态页面值传递之cookie/" data-title="JavaScript静态页面值传递之cookie" data-url="http://genhaoer.github.io/2016/03/04/JavaScript静态页面值传递之cookie/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -399,15 +396,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/03/Javascript静态页面值传递之URL/" title="上一篇: Javascript静态页面值传递之URL">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/03/03/Javascript静态页面值传递之URL/" title="下一篇: Javascript静态页面值传递之URL">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
