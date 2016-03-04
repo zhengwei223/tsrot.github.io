@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://genhaoer.github.io/"/>
-  <updated>2016-03-04T13:43:35.177Z</updated>
+  <updated>2016-03-04T13:46:36.681Z</updated>
   <id>http://genhaoer.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://genhaoer.github.io/2016/03/03/Javascript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BURL/"/>
     <id>http://genhaoer.github.io/2016/03/03/Javascript静态页面值传递之URL/</id>
     <published>2016-03-03T14:45:44.000Z</published>
-    <updated>2016-03-04T13:43:35.177Z</updated>
+    <updated>2016-03-04T13:46:36.681Z</updated>
     
     <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
@@ -38,7 +38,7 @@
       <category term="JavaScript" scheme="http://genhaoer.github.io/categories/JavaScript/"/>
     
     
-      <category term="前端总结 个人笔记" scheme="http://genhaoer.github.io/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+      <category term="前端总结,个人笔记" scheme="http://genhaoer.github.io/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
