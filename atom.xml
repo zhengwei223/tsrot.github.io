@@ -45,11 +45,11 @@
   </entry>
   
   <entry>
-    <title>JavaScript静态页面值传递之cookie</title>
+    <title>JavaScript静态页面值传递之Cookie</title>
     <link href="http://genhaoer.github.io/2016/03/04/JavaScript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BCookie/"/>
     <id>http://genhaoer.github.io/2016/03/04/JavaScript静态页面值传递之Cookie/</id>
     <published>2016-03-04T14:05:48.000Z</published>
-    <updated>2016-03-06T12:45:42.060Z</updated>
+    <updated>2016-03-06T12:59:23.071Z</updated>
     
     <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;我比较提倡的是能在前端做的事就不要放到后端来增加服务器的负担。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;br&gt;Cookie是浏览器存储少量命名数据.&lt;br&gt;它与某个特定的网页或网站关联在一起.&lt;br&gt;Cookie用来给浏览器提供内存,&lt;br&gt;以便脚本和服务器程序可以在一个页面中使用另一个页面的输入数据.&lt;br&gt;&lt;span style=&quot;color:red&quot;&gt;注：此案例请放在服务器环境测试.&lt;/span&gt;&lt;/the&gt;&lt;/p&gt;
