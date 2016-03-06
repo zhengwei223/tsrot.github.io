@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://genhaoer.github.io/"/>
-  <updated>2016-03-06T12:54:53.525Z</updated>
+  <updated>2016-03-06T15:03:48.518Z</updated>
   <id>http://genhaoer.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的户外运动之登深圳梧桐山</title>
+    <link href="http://genhaoer.github.io/2016/03/06/%E6%88%91%E7%9A%84%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8%E4%B9%8B%E7%99%BB%E6%B7%B1%E5%9C%B3%E6%A2%A7%E6%A1%90%E5%B1%B1/"/>
+    <id>http://genhaoer.github.io/2016/03/06/我的户外运动之登深圳梧桐山/</id>
+    <published>2016-03-06T14:20:51.000Z</published>
+    <updated>2016-03-06T15:03:48.518Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;这是我分享的我户外运动照片&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
+&lt;h3 id=&quot;和同事登梧桐山&quot;&gt;&lt;a href=&quot;#和同事登梧桐山&quot; class=&quot;headerlink&quot; title=&quot;和同事登梧桐山&quot;&gt;&lt;/a&gt;和同事登梧桐山&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160306221104.jpg&quot; alt=&quot;wutongshan-1&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457187491881.jpg&quot; alt=&quot;wutongshan-2&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457187443433.jpg&quot; alt=&quot;wutongshan-3&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;这是我分享的我户外运动照片&lt;br&gt;
+    
+    </summary>
+    
+      <category term="我的爱好" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/"/>
+    
+      <category term="我的日志" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="户外运动 我的相册" scheme="http://genhaoer.github.io/tags/%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8-%E6%88%91%E7%9A%84%E7%9B%B8%E5%86%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript静态页面值传递之Window.open</title>
