@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://genhaoer.github.io/"/>
-  <updated>2016-03-19T11:53:34.543Z</updated>
+  <updated>2016-03-22T13:23:01.190Z</updated>
   <id>http://genhaoer.github.io/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>html2json与json2html的实现</title>
+    <link href="http://genhaoer.github.io/2016/03/22/html2json%E4%B8%8Ejson2html%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://genhaoer.github.io/2016/03/22/html2json与json2html的实现/</id>
+    <published>2016-03-22T04:15:03.000Z</published>
+    <updated>2016-03-22T13:23:01.190Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;在这满天由用户创造内容的时代，各个地方穿插着可以让用户输入的入口。如：写文章，写博客等。但由于用户输入的内容完全是不安全的，所以在存储和展现的时候需要对内容进行过滤，避免用户内容产生XSS和钓鱼等各种危害行为。html2json:一种新的富文本数据传输方案。（转载前端大神welefen的&lt;a href=&quot;http://www.welefen.com/post/html2json-and-json2html-2.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;html2json&amp;amp;json2html的实现&lt;/a&gt;）&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;
+
+&lt;h3 id=&quot;前端实现：html2json&quot;&gt;&lt;a href=&quot;#前端实现：html2json&quot; class=&quot;headerlink&quot; title=&quot;前端实现：html2json&quot;&gt;&lt;/a&gt;前端实现：html2json&lt;/h3&gt;&lt;p&gt;前端实现本来准备使用已经有的html2json库，但具体看了下代码。发现这个库是基于词法分析来做的，并且依赖htmlparser.js这库。一方面JS代码量太大，另一方面执行起来也有性能问题。&lt;/p&gt;
+&lt;p&gt;于是解决浏览器的DOM解析和构建接口，几十行代码就搞定了html2json的过程。&lt;/p&gt;
+&lt;p&gt;实现原理其实很简单：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;创建一个div&lt;/li&gt;
+&lt;li&gt;将text内容innerHTML到div&lt;/li&gt;
+&lt;li&gt;获取div的childNodes&lt;/li&gt;
+&lt;li&gt;遍历节点，并通过node.attributes属性获取到属性名和值&lt;/li&gt;
+&lt;li&gt;在递归获取字节点的属性等&lt;/li&gt;
+&lt;li&gt;将对象转为JSON&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;具体代码见：&lt;br&gt;&lt;a href=&quot;https://github.com/welefen/html2json/blob/master/src/html2json.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/welefen/html2json/blob/master/src/html2json.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;整个代码也就100行左右。&lt;/p&gt;
+&lt;p&gt;不过IE6下通过node.attributes获取属性名和属性值会有一些问题，它会打印出该元素的书有属性，而不是仅仅是显性属性。目前解决整个问题的方案是通过配置属性白名单进行的，并且对于style属性，需要通过node.getAttribute(‘style’).cssText进行。&lt;/p&gt;
+&lt;p&gt;使用方式：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var jsonResult = html2json(text);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JSON数据格式&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;welefen&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;tag&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;div&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;attr&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;welefen&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;suredy&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;child&quot;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;child&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&quot;tag&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;span&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&quot;attr&quot;&lt;/span&gt;: &amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&quot;child&quot;&lt;/span&gt;: []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;suredy&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;tag&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;p&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;attr&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&quot;style&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;font-size: 12px&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&quot;id&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;test1&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;child&quot;&lt;/span&gt;: []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;包含text,tag,attr,child等几部分。&lt;/p&gt;
+&lt;h3 id=&quot;后端实现：json2html&quot;&gt;&lt;a href=&quot;#后端实现：json2html&quot; class=&quot;headerlink&quot; title=&quot;后端实现：json2html&quot;&gt;&lt;/a&gt;后端实现：json2html&lt;/h3&gt;&lt;p&gt;后端需要将接收到的json转为html，如果不考虑安全因素的话是非常简单的，只要进行简单的拼接就可以了。由于考虑各种安全问题，所以相对要复杂点，但对象于传统的通过词法分析然后过滤要简单的多了。&lt;/p&gt;
+&lt;p&gt;需要过滤或者数据校验的数据有：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;需要对tag进行过滤，配置白名单，不在白名单内的tag直接过滤掉&lt;/li&gt;
+&lt;li&gt;tag属性过滤，对不支持的tag属性直接过滤掉，不管属性值是什么。&lt;/li&gt;
+&lt;li&gt;对tag属性进行过滤，如对src值的过滤，href值的过滤。&lt;/li&gt;
+&lt;li&gt;对style的属性值进行分析，设置css属性白名单，设置css属性值的校验规则。&lt;/li&gt;
+&lt;li&gt;添加有些标签必须有某些属性规则，如：embed标签必须有type=”application/x-shockwave-flash”，并且allowscriptaccess的值需要确定&lt;/li&gt;
+&lt;li&gt;添加有些标签的子元素必须有哪些属性，如：object标签的子标签param标签，必须要有allowscriptaccess属性，并且属性值是一个配置的特定值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;具体代码见:&lt;br&gt;&lt;a href=&quot;https://github.com/welefen/html2json/blob/master/src/json2html.class.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/welefen/html2json/blob/master/src/json2html.class.php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;由于每个使用场景的白名单不一样，所以需要进行很多配置。&lt;/p&gt;
+&lt;/the&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;在这满天由用户创造内容的时代，各个地方穿插着可以让用户输入的入口。如：写文章，写博客等。但由于用户输入的内容完全是不安全的，所以在存储和展现的时候需要对内容进行过滤，避免用户内容产生XSS和钓鱼等各种危害行为。html2json:一种新的富文本数据传输方案。（转载前端大神welefen的&lt;a href=&quot;http://www.welefen.com/post/html2json-and-json2html-2.html&quot;&gt;html2json&amp;amp;json2html的实现&lt;/a&gt;）&lt;br&gt;
+    
+    </summary>
+    
+      <category term="转载博客" scheme="http://genhaoer.github.io/categories/%E8%BD%AC%E8%BD%BD%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="html2json" scheme="http://genhaoer.github.io/tags/html2json/"/>
+    
+      <category term="json2html" scheme="http://genhaoer.github.io/tags/json2html/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS常见错误</title>
