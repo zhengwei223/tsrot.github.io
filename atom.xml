@@ -4,9 +4,9 @@
   <subtitle>This is tsrot blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://genhaoer.github.io/"/>
+  <link href="http://blog.xieliqun.com/"/>
   <updated>2016-04-17T14:41:57.505Z</updated>
-  <id>http://genhaoer.github.io/</id>
+  <id>http://blog.xieliqun.com/</id>
   
   <author>
     <name>Tsrot</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>busy</title>
-    <link href="http://genhaoer.github.io/2016/04/17/busy/"/>
-    <id>http://genhaoer.github.io/2016/04/17/busy/</id>
+    <link href="http://blog.xieliqun.com/2016/04/17/busy/"/>
+    <id>http://blog.xieliqun.com/2016/04/17/busy/</id>
     <published>2016-04-17T05:39:32.000Z</published>
     <updated>2016-04-17T14:41:57.505Z</updated>
     
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="我的日志" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
+      <category term="我的日志" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
     
     
-      <category term="other" scheme="http://genhaoer.github.io/tags/other/"/>
+      <category term="other" scheme="http://blog.xieliqun.com/tags/other/"/>
     
   </entry>
   
   <entry>
     <title>JS继承的几种方方法</title>
-    <link href="http://genhaoer.github.io/2016/03/24/JS%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://genhaoer.github.io/2016/03/24/JS继承的几种方方法/</id>
+    <link href="http://blog.xieliqun.com/2016/03/24/JS%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://blog.xieliqun.com/2016/03/24/JS继承的几种方方法/</id>
     <published>2016-03-24T05:05:46.000Z</published>
     <updated>2016-03-24T14:24:15.933Z</updated>
     
@@ -61,17 +61,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://genhaoer.github.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://blog.xieliqun.com/categories/JavaScript/"/>
     
     
-      <category term="JS继承" scheme="http://genhaoer.github.io/tags/JS%E7%BB%A7%E6%89%BF/"/>
+      <category term="JS继承" scheme="http://blog.xieliqun.com/tags/JS%E7%BB%A7%E6%89%BF/"/>
     
   </entry>
   
   <entry>
     <title>html2json与json2html的实现</title>
-    <link href="http://genhaoer.github.io/2016/03/22/html2json%E4%B8%8Ejson2html%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://genhaoer.github.io/2016/03/22/html2json与json2html的实现/</id>
+    <link href="http://blog.xieliqun.com/2016/03/22/html2json%E4%B8%8Ejson2html%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://blog.xieliqun.com/2016/03/22/html2json与json2html的实现/</id>
     <published>2016-03-22T04:15:03.000Z</published>
     <updated>2016-03-22T13:27:04.235Z</updated>
     
@@ -120,19 +120,19 @@
     
     </summary>
     
-      <category term="转载博客" scheme="http://genhaoer.github.io/categories/%E8%BD%AC%E8%BD%BD%E5%8D%9A%E5%AE%A2/"/>
+      <category term="转载博客" scheme="http://blog.xieliqun.com/categories/%E8%BD%AC%E8%BD%BD%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="html2json" scheme="http://genhaoer.github.io/tags/html2json/"/>
+      <category term="html2json" scheme="http://blog.xieliqun.com/tags/html2json/"/>
     
-      <category term="json2html" scheme="http://genhaoer.github.io/tags/json2html/"/>
+      <category term="json2html" scheme="http://blog.xieliqun.com/tags/json2html/"/>
     
   </entry>
   
   <entry>
     <title>CSS常见错误</title>
-    <link href="http://genhaoer.github.io/2016/03/19/CSS%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/"/>
-    <id>http://genhaoer.github.io/2016/03/19/CSS常见错误/</id>
+    <link href="http://blog.xieliqun.com/2016/03/19/CSS%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/"/>
+    <id>http://blog.xieliqun.com/2016/03/19/CSS常见错误/</id>
     <published>2016-03-19T02:35:19.000Z</published>
     <updated>2016-03-19T11:53:34.543Z</updated>
     
@@ -163,21 +163,21 @@
     
     </summary>
     
-      <category term="我踩过的坑" scheme="http://genhaoer.github.io/categories/%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+      <category term="我踩过的坑" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
     
-      <category term="日常总结" scheme="http://genhaoer.github.io/categories/%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/"/>
+      <category term="日常总结" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/%E6%97%A5%E5%B8%B8%E6%80%BB%E7%BB%93/"/>
     
     
-      <category term="CSS+DIV布局" scheme="http://genhaoer.github.io/tags/CSS-DIV%E5%B8%83%E5%B1%80/"/>
+      <category term="CSS+DIV布局" scheme="http://blog.xieliqun.com/tags/CSS-DIV%E5%B8%83%E5%B1%80/"/>
     
-      <category term="CSS坑" scheme="http://genhaoer.github.io/tags/CSS%E5%9D%91/"/>
+      <category term="CSS坑" scheme="http://blog.xieliqun.com/tags/CSS%E5%9D%91/"/>
     
   </entry>
   
   <entry>
     <title>前端JavaScript分页</title>
-    <link href="http://genhaoer.github.io/2016/03/10/%E5%89%8D%E7%AB%AFJavaScript%E5%88%86%E9%A1%B5/"/>
-    <id>http://genhaoer.github.io/2016/03/10/前端JavaScript分页/</id>
+    <link href="http://blog.xieliqun.com/2016/03/10/%E5%89%8D%E7%AB%AFJavaScript%E5%88%86%E9%A1%B5/"/>
+    <id>http://blog.xieliqun.com/2016/03/10/前端JavaScript分页/</id>
     <published>2016-03-10T03:03:17.000Z</published>
     <updated>2016-03-13T15:09:10.746Z</updated>
     
@@ -194,17 +194,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://genhaoer.github.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://blog.xieliqun.com/categories/JavaScript/"/>
     
     
-      <category term="前端分页" scheme="http://genhaoer.github.io/tags/%E5%89%8D%E7%AB%AF%E5%88%86%E9%A1%B5/"/>
+      <category term="前端分页" scheme="http://blog.xieliqun.com/tags/%E5%89%8D%E7%AB%AF%E5%88%86%E9%A1%B5/"/>
     
   </entry>
   
   <entry>
     <title>我的户外运动之登深圳梧桐山</title>
-    <link href="http://genhaoer.github.io/2016/03/06/%E6%88%91%E7%9A%84%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8%E4%B9%8B%E7%99%BB%E6%B7%B1%E5%9C%B3%E6%A2%A7%E6%A1%90%E5%B1%B1/"/>
-    <id>http://genhaoer.github.io/2016/03/06/我的户外运动之登深圳梧桐山/</id>
+    <link href="http://blog.xieliqun.com/2016/03/06/%E6%88%91%E7%9A%84%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8%E4%B9%8B%E7%99%BB%E6%B7%B1%E5%9C%B3%E6%A2%A7%E6%A1%90%E5%B1%B1/"/>
+    <id>http://blog.xieliqun.com/2016/03/06/我的户外运动之登深圳梧桐山/</id>
     <published>2016-03-06T05:20:51.000Z</published>
     <updated>2016-03-07T14:11:50.279Z</updated>
     
@@ -219,21 +219,21 @@
     
     </summary>
     
-      <category term="我的爱好" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/"/>
+      <category term="我的爱好" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/"/>
     
-      <category term="我的日志" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
+      <category term="我的日志" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
     
     
-      <category term="我的相册" scheme="http://genhaoer.github.io/tags/%E6%88%91%E7%9A%84%E7%9B%B8%E5%86%8C/"/>
+      <category term="我的相册" scheme="http://blog.xieliqun.com/tags/%E6%88%91%E7%9A%84%E7%9B%B8%E5%86%8C/"/>
     
-      <category term="户外运动" scheme="http://genhaoer.github.io/tags/%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8/"/>
+      <category term="户外运动" scheme="http://blog.xieliqun.com/tags/%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript静态页面值传递之Window.open</title>
-    <link href="http://genhaoer.github.io/2016/03/06/JavaScript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BWindow-open/"/>
-    <id>http://genhaoer.github.io/2016/03/06/JavaScript静态页面值传递之Window-open/</id>
+    <link href="http://blog.xieliqun.com/2016/03/06/JavaScript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BWindow-open/"/>
+    <id>http://blog.xieliqun.com/2016/03/06/JavaScript静态页面值传递之Window-open/</id>
     <published>2016-03-06T03:47:52.000Z</published>
     <updated>2016-03-06T12:54:53.525Z</updated>
     
@@ -250,19 +250,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://genhaoer.github.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://blog.xieliqun.com/categories/JavaScript/"/>
     
     
-      <category term="个人笔记" scheme="http://genhaoer.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+      <category term="个人笔记" scheme="http://blog.xieliqun.com/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端总结" scheme="http://genhaoer.github.io/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/"/>
+      <category term="前端总结" scheme="http://blog.xieliqun.com/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript静态页面值传递之Cookie</title>
-    <link href="http://genhaoer.github.io/2016/03/04/JavaScript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BCookie/"/>
-    <id>http://genhaoer.github.io/2016/03/04/JavaScript静态页面值传递之Cookie/</id>
+    <link href="http://blog.xieliqun.com/2016/03/04/JavaScript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BCookie/"/>
+    <id>http://blog.xieliqun.com/2016/03/04/JavaScript静态页面值传递之Cookie/</id>
     <published>2016-03-04T05:05:48.000Z</published>
     <updated>2016-03-06T12:59:23.071Z</updated>
     
@@ -279,19 +279,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://genhaoer.github.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://blog.xieliqun.com/categories/JavaScript/"/>
     
     
-      <category term="个人笔记" scheme="http://genhaoer.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+      <category term="个人笔记" scheme="http://blog.xieliqun.com/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端总结" scheme="http://genhaoer.github.io/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/"/>
+      <category term="前端总结" scheme="http://blog.xieliqun.com/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>Javascript静态页面值传递之URL</title>
-    <link href="http://genhaoer.github.io/2016/03/03/Javascript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BURL/"/>
-    <id>http://genhaoer.github.io/2016/03/03/Javascript静态页面值传递之URL/</id>
+    <link href="http://blog.xieliqun.com/2016/03/03/Javascript%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%80%BC%E4%BC%A0%E9%80%92%E4%B9%8BURL/"/>
+    <id>http://blog.xieliqun.com/2016/03/03/Javascript静态页面值传递之URL/</id>
     <published>2016-03-03T05:45:44.000Z</published>
     <updated>2016-03-06T12:39:46.190Z</updated>
     
@@ -308,19 +308,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://genhaoer.github.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://blog.xieliqun.com/categories/JavaScript/"/>
     
     
-      <category term="个人笔记" scheme="http://genhaoer.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
+      <category term="个人笔记" scheme="http://blog.xieliqun.com/tags/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端总结" scheme="http://genhaoer.github.io/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/"/>
+      <category term="前端总结" scheme="http://blog.xieliqun.com/tags/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>第一篇博客</title>
-    <link href="http://genhaoer.github.io/2016/02/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://genhaoer.github.io/2016/02/24/第一篇博客/</id>
+    <link href="http://blog.xieliqun.com/2016/02/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://blog.xieliqun.com/2016/02/24/第一篇博客/</id>
     <published>2016-02-24T00:59:39.000Z</published>
     <updated>2016-03-02T13:46:25.548Z</updated>
     
@@ -340,10 +340,10 @@
     
     </summary>
     
-      <category term="我的日志" scheme="http://genhaoer.github.io/categories/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
+      <category term="我的日志" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
     
     
-      <category term="心得感受" scheme="http://genhaoer.github.io/tags/%E5%BF%83%E5%BE%97%E6%84%9F%E5%8F%97/"/>
+      <category term="心得感受" scheme="http://blog.xieliqun.com/tags/%E5%BF%83%E5%BE%97%E6%84%9F%E5%8F%97/"/>
     
   </entry>
   
