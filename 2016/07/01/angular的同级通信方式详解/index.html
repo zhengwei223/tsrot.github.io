@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>html2json与json2html的实现 | Tsrot Space</title>
+  <title>关于angular的$emit,$broadcast,$on通信机制 | Tsrot Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在这满天由用户创造内容的时代，各个地方穿插着可以让用户输入的入口。如：写文章，写博客等。但由于用户输入的内容完全是不安全的，所以在存储和展现的时候需要对内容进行过滤，避免用户内容产生XSS和钓鱼等各种危害行为。html2json:一种新的富文本数据传输方案。（转载前端大神welefen的html2json&amp;amp;json2html的实现）">
+  <meta name="description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html2json与json2html的实现">
-<meta property="og:url" content="http://blog.xieliqun.com/2016/03/22/html2json与json2html的实现/index.html">
+<meta property="og:title" content="关于angular的$emit,$broadcast,$on通信机制">
+<meta property="og:url" content="http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/index.html">
 <meta property="og:site_name" content="Tsrot Space">
-<meta property="og:description" content="在这满天由用户创造内容的时代，各个地方穿插着可以让用户输入的入口。如：写文章，写博客等。但由于用户输入的内容完全是不安全的，所以在存储和展现的时候需要对内容进行过滤，避免用户内容产生XSS和钓鱼等各种危害行为。html2json:一种新的富文本数据传输方案。（转载前端大神welefen的html2json&amp;amp;json2html的实现）">
-<meta property="og:updated_time" content="2016-03-22T13:27:04.235Z">
+<meta property="og:description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
+<meta property="og:updated_time" content="2016-07-01T15:28:00.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html2json与json2html的实现">
-<meta name="twitter:description" content="在这满天由用户创造内容的时代，各个地方穿插着可以让用户输入的入口。如：写文章，写博客等。但由于用户输入的内容完全是不安全的，所以在存储和展现的时候需要对内容进行过滤，避免用户内容产生XSS和钓鱼等各种危害行为。html2json:一种新的富文本数据传输方案。（转载前端大神welefen的html2json&amp;amp;json2html的实现）">
+<meta name="twitter:title" content="关于angular的$emit,$broadcast,$on通信机制">
+<meta name="twitter:description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
   
     <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
   
@@ -220,11 +220,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-html2json与json2html的实现" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-angular的同级通信方式详解" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/html2json与json2html的实现/" class="article-date">
-      <time datetime="2016-03-22T04:15:03.000Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2016/07/01/angular的同级通信方式详解/" class="article-date">
+      <time datetime="2016-07-01T05:35:49.000Z" itemprop="datePublished">2016-07-01</time>
 </a>
     </div>
   
@@ -237,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      html2json与json2html的实现
+      关于angular的$emit,$broadcast,$on通信机制
     </h1>
   
 
@@ -246,13 +246,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/转载博客/">转载博客</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html2json/">html2json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json2html/">json2html</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -262,44 +262,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>在这满天由用户创造内容的时代，各个地方穿插着可以让用户输入的入口。如：写文章，写博客等。但由于用户输入的内容完全是不安全的，所以在存储和展现的时候需要对内容进行过滤，避免用户内容产生XSS和钓鱼等各种危害行为。html2json:一种新的富文本数据传输方案。（转载前端大神welefen的<a href="http://www.welefen.com/post/html2json-and-json2html-2.html" target="_blank" rel="external">html2json&amp;json2html的实现</a>）<br><a id="more"></a></excerpt></p>
-<the rest="" of="" contents="" |="" 余下全文="">
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h3 id="首先介绍一下我一开始使用时遇到的坑"><a href="#首先介绍一下我一开始使用时遇到的坑" class="headerlink" title="首先介绍一下我一开始使用时遇到的坑"></a>首先介绍一下我一开始使用时遇到的坑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=<span class="string">'parentCtrl'</span>&gt;</span><br><span class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;hr&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl1'</span>&gt;</span><br><span class="line">		controller <span class="number">1</span> &lt;p style=<span class="string">"color:red"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;br&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl2'</span>&gt;</span><br><span class="line">		controller <span class="number">2</span> &lt;p style=<span class="string">"color:green"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myapp'</span>,[]);</span><br><span class="line">	app.controller(<span class="string">'parentCtrl'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello parent controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'23'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChange'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			console.log(<span class="string">"收到childCtrl1冒泡过来的数据"</span>,event);</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			<span class="variable">$scope</span>.<span class="variable">$broadcast</span>(<span class="string">'ageChangeA'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl1'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child1 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'25'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'age'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			console.log(<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$emit</span>(<span class="string">'ageChange'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl2'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child2 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'30'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChangeA'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			console.log(<span class="string">"收到parentCtrl广播过来的数据"</span>,event)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>1，childCtrl1可以触发ageChange事件并向父级传递。<br>2，父级parentCtrl也可以监听到ageChange事件，然后向子级广播ageChangeA事件（现在问题来了）。<br>3，childCtrl2不能够监听到ageChangeA事件（这是为什么呢？）。<br>-&gt; 收到childCtrl1冒泡过来的数据 Object {name: “ageChange”, targetScope: a, defaultPrevented: false, currentScope: g}</p>
+<h3 id="正确使用并填坑"><a href="#正确使用并填坑" class="headerlink" title="正确使用并填坑"></a>正确使用并填坑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=<span class="string">'parentCtrl'</span>&gt;</span><br><span class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;hr&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl1'</span>&gt;</span><br><span class="line">		controller <span class="number">1</span> &lt;p style=<span class="string">"color:red"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span> ng-change=<span class="string">"change()"</span>&gt;      //ng-change事件触发</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;br&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl2'</span>&gt;</span><br><span class="line">		controller <span class="number">2</span> &lt;p style=<span class="string">"color:green"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myapp'</span>,[]);</span><br><span class="line">	app.controller(<span class="string">'parentCtrl'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello parent controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'23'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChange'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			console.log(<span class="string">"收到childCtrl1冒泡过来的数据"</span>,event);</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			<span class="variable">$scope</span>.<span class="variable">$broadcast</span>(<span class="string">'ageChangeA'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl1'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child1 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'25'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'age'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			console.log(<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="variable">$scope</span>.change = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="variable">$scope</span>.<span class="variable">$emit</span>(<span class="string">'ageChange'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl2'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child2 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'30'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChangeA'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			console.log(<span class="string">"收到parentCtrl广播过来的数据"</span>,event);</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>对比上面两段代码细心的人应该已经发现了问题的所在。<br>$emit，$broadcast其中一个必须要有事件触发，否则子级中的$on将不能识别该事件。<br>-&gt; 收到childCtrl1冒泡过来的数据 Object {name: “ageChange”, targetScope: a, defaultPrevented: false, currentScope: g}<br>-&gt; 收到parentCtrl广播过来的数据 Object {name: “ageChangeA”, targetScope: g, defaultPrevented: false, currentScope: a}</p>
 
-<h3 id="前端实现：html2json"><a href="#前端实现：html2json" class="headerlink" title="前端实现：html2json"></a>前端实现：html2json</h3><p>前端实现本来准备使用已经有的html2json库，但具体看了下代码。发现这个库是基于词法分析来做的，并且依赖<a href="http://ejohn.org/files/htmlparser.js" target="_blank" rel="external">htmlparser.js</a>这库。一方面JS代码量太大，另一方面执行起来也有性能问题。</p>
-<p>于是解决浏览器的DOM解析和构建接口，几十行代码就搞定了html2json的过程。</p>
-<p>实现原理其实很简单：</p>
-<blockquote>
-<ul>
-<li>创建一个div</li>
-<li>将text内容innerHTML到div</li>
-<li>获取div的childNodes</li>
-<li>遍历节点，并通过node.attributes属性获取到属性名和值</li>
-<li>在递归获取字节点的属性等</li>
-<li>将对象转为JSON</li>
-</ul>
-</blockquote>
-<p>具体代码见：<br><a href="https://github.com/welefen/html2json/blob/master/src/html2json.js" target="_blank" rel="external">https://github.com/welefen/html2json/blob/master/src/html2json.js</a></p>
-<p>整个代码也就100行左右。</p>
-<p>不过IE6下通过node.attributes获取属性名和属性值会有一些问题，它会打印出该元素的书有属性，而不是仅仅是显性属性。目前解决整个问题的方案是通过配置属性白名单进行的，并且对于style属性，需要通过node.getAttribute(‘style’).cssText进行。</p>
-<p>使用方式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jsonResult = html2json(text);</span><br></pre></td></tr></table></figure>
-<p>JSON数据格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"welefen"</span>,</span><br><span class="line">        <span class="string">"tag"</span>: <span class="string">"div"</span>,</span><br><span class="line">        <span class="string">"attr"</span>: &#123;</span><br><span class="line">            <span class="string">"id"</span>: <span class="string">"welefen"</span>,</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"suredy"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"child"</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"text"</span>: <span class="string">"child"</span>,</span><br><span class="line">                <span class="string">"tag"</span>: <span class="string">"span"</span>,</span><br><span class="line">                <span class="string">"attr"</span>: &#123;&#125;,</span><br><span class="line">                <span class="string">"child"</span>: []</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"suredy"</span>,</span><br><span class="line">        <span class="string">"tag"</span>: <span class="string">"p"</span>,</span><br><span class="line">        <span class="string">"attr"</span>: &#123;</span><br><span class="line">            <span class="string">"style"</span>: <span class="string">"font-size: 12px"</span>,</span><br><span class="line">            <span class="string">"id"</span>: <span class="string">"test1"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"child"</span>: []</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>包含text,tag,attr,child等几部分。</p>
-<h3 id="后端实现：json2html"><a href="#后端实现：json2html" class="headerlink" title="后端实现：json2html"></a>后端实现：json2html</h3><p>后端需要将接收到的json转为html，如果不考虑安全因素的话是非常简单的，只要进行简单的拼接就可以了。由于考虑各种安全问题，所以相对要复杂点，但对象于传统的通过词法分析然后过滤要简单的多了。</p>
-<p>需要过滤或者数据校验的数据有：</p>
-<blockquote>
-<ul>
-<li>需要对tag进行过滤，配置白名单，不在白名单内的tag直接过滤掉</li>
-<li>tag属性过滤，对不支持的tag属性直接过滤掉，不管属性值是什么。</li>
-<li>对tag属性进行过滤，如对src值的过滤，href值的过滤。</li>
-<li>对style的属性值进行分析，设置css属性白名单，设置css属性值的校验规则。</li>
-<li>添加有些标签必须有某些属性规则，如：embed标签必须有type=”application/x-shockwave-flash”，并且allowscriptaccess的值需要确定</li>
-<li>添加有些标签的子元素必须有哪些属性，如：object标签的子标签param标签，必须要有allowscriptaccess属性，并且属性值是一个配置的特定值。</li>
-</ul>
-</blockquote>
-<p>具体代码见:<br><a href="https://github.com/welefen/html2json/blob/master/src/json2html.class.php" target="_blank" rel="external">https://github.com/welefen/html2json/blob/master/src/json2html.class.php</a></p>
-<p>由于每个使用场景的白名单不一样，所以需要进行很多配置。</p>
-</the>
       
     </div>
     
@@ -307,13 +276,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/22/html2json与json2html的实现/">html2json与json2html的实现</a></p>
+        <p><span>本文标题:</span><a href="/2016/07/01/angular的同级通信方式详解/">关于angular的$emit,$broadcast,$on通信机制</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
-        <p><span>发布时间:</span>2016年03月22日 - 13时15分</p>
-        <p><span>最后更新:</span>2016年03月22日 - 13时27分</p>
+        <p><span>发布时间:</span>2016年07月01日 - 14时35分</p>
+        <p><span>最后更新:</span>2016年07月01日 - 15时28分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/22/html2json与json2html的实现/" title="html2json与json2html的实现">http://blog.xieliqun.com/2016/03/22/html2json与json2html的实现/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/03/22/html2json与json2html的实现/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/01/angular的同级通信方式详解/" title="关于angular的$emit,$broadcast,$on通信机制">http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -326,16 +295,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/24/JS继承的几种方方法/">
-                    JS继承的几种方方法
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/19/CSS常见错误/">
-                    CSS常见错误
+                <a href="/2016/04/17/busy/">
+                    busy
                 </a>
             </div>
         
@@ -346,7 +309,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前端实现：html2json"><span class="toc-number">1.</span> <span class="toc-text">前端实现：html2json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后端实现：json2html"><span class="toc-number">2.</span> <span class="toc-text">后端实现：json2html</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先介绍一下我一开始使用时遇到的坑"><span class="toc-number">1.</span> <span class="toc-text">首先介绍一下我一开始使用时遇到的坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确使用并填坑"><span class="toc-number">2.</span> <span class="toc-text">正确使用并填坑</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -410,7 +373,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/22/html2json与json2html的实现/" data-title="html2json与json2html的实现" data-url="http://blog.xieliqun.com/2016/03/22/html2json与json2html的实现/"></div>
+    <div class="ds-thread" data-thread-key="2016/07/01/angular的同级通信方式详解/" data-title="关于angular的$emit,$broadcast,$on通信机制" data-url="http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -434,15 +397,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/24/JS继承的几种方方法/" title="上一篇: JS继承的几种方方法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/19/CSS常见错误/" title="下一篇: CSS常见错误">
+            <a href="/2016/04/17/busy/" title="下一篇: busy">
                 <i class="fa fa-angle-right"></i>
             </a>
         
