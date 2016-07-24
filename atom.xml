@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.xieliqun.com/"/>
-  <updated>2016-07-17T13:31:27.565Z</updated>
+  <updated>2016-07-24T12:04:14.281Z</updated>
   <id>http://blog.xieliqun.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的sublime插件</title>
+    <link href="http://blog.xieliqun.com/2016/07/24/%E6%88%91%E7%9A%84sublime%E6%8F%92%E4%BB%B6/"/>
+    <id>http://blog.xieliqun.com/2016/07/24/我的sublime插件/</id>
+    <published>2016-07-24T02:54:26.000Z</published>
+    <updated>2016-07-24T12:04:14.281Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;备份一下我的sublime插件&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
+&lt;h3 id=&quot;AdvancedNewFile-快速新建文件&quot;&gt;&lt;a href=&quot;#AdvancedNewFile-快速新建文件&quot; class=&quot;headerlink&quot; title=&quot;AdvancedNewFile   快速新建文件&quot;&gt;&lt;/a&gt;AdvancedNewFile   快速新建文件&lt;/h3&gt;&lt;h3 id=&quot;AngularJS&quot;&gt;&lt;a href=&quot;#AngularJS&quot; class=&quot;headerlink&quot; title=&quot;AngularJS&quot;&gt;&lt;/a&gt;AngularJS&lt;/h3&gt;&lt;h3 id=&quot;Emmet&quot;&gt;&lt;a href=&quot;#Emmet&quot; class=&quot;headerlink&quot; title=&quot;Emmet&quot;&gt;&lt;/a&gt;Emmet&lt;/h3&gt;&lt;h3 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h3&gt;&lt;h3 id=&quot;JsFormat&quot;&gt;&lt;a href=&quot;#JsFormat&quot; class=&quot;headerlink&quot; title=&quot;JsFormat&quot;&gt;&lt;/a&gt;JsFormat&lt;/h3&gt;&lt;h3 id=&quot;Nodejs&quot;&gt;&lt;a href=&quot;#Nodejs&quot; class=&quot;headerlink&quot; title=&quot;Nodejs&quot;&gt;&lt;/a&gt;Nodejs&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;备份一下我的sublime插件&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IDE" scheme="http://blog.xieliqun.com/categories/IDE/"/>
+    
+    
+      <category term="sublime插件" scheme="http://blog.xieliqun.com/tags/sublime%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>ionic初学者文档</title>
