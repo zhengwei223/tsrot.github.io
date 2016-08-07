@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript closure | Tsrot Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript变量分为全局变量和局部变量。Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量，而在函数外部自然无法读取函数内的局部变量。当你需要在函数外调用函数内的局部变量时，此时就要用到一些方法。这个过程就是闭包。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript closure">
+<meta property="og:url" content="http://blog.xieliqun.com/2016/08/07/javascript-closure/index.html">
+<meta property="og:site_name" content="Tsrot Space">
+<meta property="og:description" content="JavaScript变量分为全局变量和局部变量。Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量，而在函数外部自然无法读取函数内的局部变量。当你需要在函数外调用函数内的局部变量时，此时就要用到一些方法。这个过程就是闭包。">
+<meta property="og:updated_time" content="2016-08-07T10:34:08.002Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript closure">
+<meta name="twitter:description" content="JavaScript变量分为全局变量和局部变量。Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量，而在函数外部自然无法读取函数内的局部变量。当你需要在函数外调用函数内的局部变量时，此时就要用到一些方法。这个过程就是闭包。">
+  
+    <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/tsrot.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Tsrot</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">This is tsrot blog</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:me@xieliqun.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="http://github.com/tsrot" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS-DIV布局/" style="font-size: 10px;">CSS+DIV布局</a> <a href="/tags/CSS坑/" style="font-size: 10px;">CSS坑</a> <a href="/tags/JS继承/" style="font-size: 10px;">JS继承</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/html2json/" style="font-size: 10px;">html2json</a> <a href="/tags/ionic/" style="font-size: 10px;">ionic</a> <a href="/tags/json2html/" style="font-size: 10px;">json2html</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/sublime插件/" style="font-size: 10px;">sublime插件</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/个人笔记/" style="font-size: 20px;">个人笔记</a> <a href="/tags/前端分页/" style="font-size: 10px;">前端分页</a> <a href="/tags/前端总结/" style="font-size: 16.67px;">前端总结</a> <a href="/tags/心得感受/" style="font-size: 10px;">心得感受</a> <a href="/tags/我的相册/" style="font-size: 10px;">我的相册</a> <a href="/tags/户外运动/" style="font-size: 10px;">户外运动</a> <a href="/tags/移动端/" style="font-size: 13.33px;">移动端</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Tsrot</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/tsrot.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Tsrot</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">This is tsrot blog</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:me@xieliqun.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="http://github.com/tsrot" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-javascript-closure" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/07/javascript-closure/" class="article-date">
+      <time datetime="2016-08-07T01:32:10.000Z" itemprop="datePublished">2016-08-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript closure
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>JavaScript变量分为全局变量和局部变量。Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量，而在函数外部自然无法读取函数内的局部变量。当你需要在函数外调用函数内的局部变量时，此时就要用到一些方法。这个过程就是闭包。<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<p>###一、JavaScript为什么会有闭包这种东西<br>JavaScript没有像其它后端语言一样可以直接定义一个变量可供其它外部函数调用的关键字或者方法。于是就产生了闭包这种东西。举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//内部函数可以访问外部变量</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"tsrot"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(name);</span><br><span class="line">&#125;</span><br><span class="line">f1();   <span class="comment">//tsrot</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数外部无法访问函数内部的局部变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> name = <span class="string">"tsrot"</span>; <span class="comment">//注意:不用var定义的变量，将会默认为全局变量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">//error undefined</span></span><br></pre></td></tr></table></figure>
+<p>如果是java，一个类的私有属性，可以通过公共的方法来获取，比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> name;    </span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="二、闭包的概念"><a href="#二、闭包的概念" class="headerlink" title="二、闭包的概念"></a>二、闭包的概念</h3><p>闭包，官方对闭包的解释是：一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。闭包的特点：</p>
+<ul>
+<li>作为一个函数变量的一个引用，当函数返回时，其处于激活状态。</li>
+<li>一个闭包就是当一个函数返回时，一个没有释放资源的栈区。</li>
+</ul>
+<p>我的理解就是：让函数外部能调用函数内部变量的一个过程就是闭包。举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> name1 = <span class="string">"tsrot"</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun = f1();    <span class="comment">//此时就访问到了name1的值</span></span><br><span class="line"><span class="built_in">console</span>.log(fun()) <span class="comment">//tsrot</span></span><br></pre></td></tr></table></figure></p>
+<p>###三、闭包的用途<br>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> n = <span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		n++;</span><br><span class="line">		<span class="built_in">console</span>.log(n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> f2; <span class="comment">//注意此时应该写f2而不是f2()</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun = f1();</span><br><span class="line">fun();  <span class="comment">//1</span></span><br><span class="line">fun();  <span class="comment">//2  此时n就保存在了内存中</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="四、闭包的写法"><a href="#四、闭包的写法" class="headerlink" title="四、闭包的写法"></a>四、闭包的写法</h3><h4 id="1、原型调用写法"><a href="#1、原型调用写法" class="headerlink" title="1、原型调用写法"></a>1、原型调用写法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在函数内部添加属性，然后在外部调用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">r</span>) </span>&#123;  </span><br><span class="line">	<span class="keyword">this</span>.r = r;  </span><br><span class="line">&#125;  </span><br><span class="line">Circle.PI = <span class="number">3.14159</span>;  </span><br><span class="line">Circle.prototype.area = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">	<span class="keyword">return</span> Circle.PI * <span class="keyword">this</span>.r * <span class="keyword">this</span>.r;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle(<span class="number">1.0</span>);     </span><br><span class="line"><span class="built_in">console</span>.log(c.area());</span><br></pre></td></tr></table></figure>
+<h4 id="2、函数赋值调用写法"><a href="#2、函数赋值调用写法" class="headerlink" title="2、函数赋值调用写法"></a>2、函数赋值调用写法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Circle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">   <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();  </span><br><span class="line">   obj.PI = <span class="number">3.14159</span>;  </span><br><span class="line">   obj.area = <span class="function"><span class="keyword">function</span>(<span class="params">r</span>) </span>&#123;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">   &#125;  </span><br><span class="line">   <span class="keyword">return</span> obj;  </span><br><span class="line">&#125;; </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle();  </span><br><span class="line"><span class="built_in">console</span>.log(c.area(<span class="number">1.0</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="3、对象赋值调用写法（常用写法）"><a href="#3、对象赋值调用写法（常用写法）" class="headerlink" title="3、对象赋值调用写法（常用写法）"></a>3、对象赋值调用写法（常用写法）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Circle = <span class="keyword">new</span> <span class="built_in">Object</span>();  </span><br><span class="line">Circle.PI = <span class="number">3.14159</span>;  </span><br><span class="line">Circle.area = <span class="function"><span class="keyword">function</span>(<span class="params">r</span>) </span>&#123;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">&#125;;</span><br><span class="line">consol.log(Circle.area(<span class="number">1.0</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="4、声明对象调用写法（比较好的一种写法）"><a href="#4、声明对象调用写法（比较好的一种写法）" class="headerlink" title="4、声明对象调用写法（比较好的一种写法）"></a>4、声明对象调用写法（比较好的一种写法）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Circle=&#123;  </span><br><span class="line">	PI : <span class="number">3.14159</span>,  </span><br><span class="line">	area : <span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;  </span><br><span class="line">	         <span class="keyword">return</span> <span class="keyword">this</span>.PI * r * r;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;;  </span><br><span class="line"><span class="built_in">console</span>.log(Circle.area(<span class="number">1.0</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="5、Function对象调用写法"><a href="#5、Function对象调用写法" class="headerlink" title="5、Function对象调用写法"></a>5、Function对象调用写法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//比较少见的一种写法</span></span><br><span class="line"><span class="keyword">var</span> Circle = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"this.PI = 3.14159;this.area = function( r ) &#123;return r*r*this.PI;&#125;"</span>);  </span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Circle();</span><br><span class="line"><span class="built_in">console</span>.log(c.area(<span class="number">1.0</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="6、匿名函数调用写法（常用写法）"><a href="#6、匿名函数调用写法（常用写法）" class="headerlink" title="6、匿名函数调用写法（常用写法）"></a>6、匿名函数调用写法（常用写法）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> PI = <span class="number">3.14159</span>;</span><br><span class="line">	<span class="keyword">var</span> area = PI * r * r;</span><br><span class="line">	<span class="built_in">console</span>.log(area);</span><br><span class="line">&#125;)(<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="7、函数返回值写法（常用写法）"><a href="#7、函数返回值写法（常用写法）" class="headerlink" title="7、函数返回值写法（常用写法）"></a>7、函数返回值写法（常用写法）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Circle</span>(<span class="params">r</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> PI = <span class="number">3.14159</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">area</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> PI * r * r;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> area();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Circle(<span class="number">1.0</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="五、思考"><a href="#五、思考" class="headerlink" title="五、思考"></a>五、思考</h3><p>思考1：修改下面函数使之输出数组内元素？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">		setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">		&#125;,<span class="number">1000</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure></p>
+<p>思考2：修改下面代码使之输出它想表达的结果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"list"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>5<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">	<span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>);</span><br><span class="line">	<span class="keyword">var</span> li = list.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;li.length;i++)&#123;</span><br><span class="line">		li[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			alert(li[i].innerHTML); <span class="comment">//这里报错</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>答案1<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">		(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">			setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">			&#125;,<span class="number">1000</span>);</span><br><span class="line">		&#125;)(i)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure></p>
+<p>答案2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"list"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>4<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">li</span>&gt;</span>5<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">	<span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>);</span><br><span class="line">	<span class="keyword">var</span> li = list.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;li.length;i++)&#123;</span><br><span class="line">		(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">			li[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				alert(li[i].innerHTML);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)(i)</span><br><span class="line">	&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/08/07/javascript-closure/">javascript closure</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
+        <p><span>发布时间:</span>2016年08月07日 - 10时32分</p>
+        <p><span>最后更新:</span>2016年08月07日 - 10时34分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/07/javascript-closure/" title="javascript closure">http://blog.xieliqun.com/2016/08/07/javascript-closure/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/08/07/javascript-closure/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/07/30/javascript重点和难点/">
+                    javascript重点和难点
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#二、闭包的概念"><span class="toc-number">1.</span> <span class="toc-text">二、闭包的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、闭包的写法"><span class="toc-number">2.</span> <span class="toc-text">四、闭包的写法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、原型调用写法"><span class="toc-number">2.1.</span> <span class="toc-text">1、原型调用写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、函数赋值调用写法"><span class="toc-number">2.2.</span> <span class="toc-text">2、函数赋值调用写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、对象赋值调用写法（常用写法）"><span class="toc-number">2.3.</span> <span class="toc-text">3、对象赋值调用写法（常用写法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、声明对象调用写法（比较好的一种写法）"><span class="toc-number">2.4.</span> <span class="toc-text">4、声明对象调用写法（比较好的一种写法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、Function对象调用写法"><span class="toc-number">2.5.</span> <span class="toc-text">5、Function对象调用写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、匿名函数调用写法（常用写法）"><span class="toc-number">2.6.</span> <span class="toc-text">6、匿名函数调用写法（常用写法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、函数返回值写法（常用写法）"><span class="toc-number">2.7.</span> <span class="toc-text">7、函数返回值写法（常用写法）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、思考"><span class="toc-number">3.</span> <span class="toc-text">五、思考</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/08/07/javascript-closure/" data-title="javascript closure" data-url="http://blog.xieliqun.com/2016/08/07/javascript-closure/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"genhaoer"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://genhaoer.github.io/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/07/30/javascript重点和难点/" title="下一篇: javascript重点和难点">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/javascript-closure/">javascript closure</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/30/javascript重点和难点/">javascript重点和难点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/30/javscript-basics/">javscript中this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/我的sublime插件/">我的sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/17/ionic初学者文档/">ionic初学者文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/17/移动端页面重构/">移动端页面重构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/01/angular的同级通信方式详解/">关于angular的$emit,$broadcast,$on通信机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/busy/">busy</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/24/JS继承的几种方方法/">JS继承的几种方方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/html2json与json2html的实现/">html2json与json2html的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/19/CSS常见错误/">CSS常见错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/前端JavaScript分页/">前端JavaScript分页</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/我的户外运动之登深圳梧桐山/">我的户外运动之登深圳梧桐山</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/JavaScript静态页面值传递之Window-open/">JavaScript静态页面值传递之Window.open</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/JavaScript静态页面值传递之Cookie/">JavaScript静态页面值传递之Cookie</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/03/Javascript静态页面值传递之URL/">Javascript静态页面值传递之URL</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/24/第一篇博客/">第一篇博客</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Tsrot
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 10;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
