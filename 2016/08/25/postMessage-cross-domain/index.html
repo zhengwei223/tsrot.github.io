@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.xieliqun.com/2016/08/25/postMessage-cross-domain/index.html">
 <meta property="og:site_name" content="Tsrot Space">
 <meta property="og:description" content="window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。">
-<meta property="og:updated_time" content="2016-08-25T14:16:15.788Z">
+<meta property="og:updated_time" content="2016-08-26T02:37:33.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5 API postMessage跨域详解">
 <meta name="twitter:description" content="window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。">
@@ -280,7 +280,7 @@
 <li>a.html</li>
 <li>b.html</li>
 </ul>
-<p>在<a href="http://127.0.0.1:8080中新建a.html，在http://127.0.0.1:9090中新建b.html。" target="_blank" rel="external">http://127.0.0.1:8080中新建a.html，在http://127.0.0.1:9090中新建b.html。</a></p>
+<p>在<a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a> 中新建a.html，在<a href="http://127.0.0.1:9090" target="_blank" rel="external">http://127.0.0.1:9090</a> 中新建b.html。</p>
 <h3 id="数据发送"><a href="#数据发送" class="headerlink" title="数据发送"></a>数据发送</h3><p>postMessage允许用户在两个窗口或frame之间传递数据，无论这个window对象是不是同源都能发送。</p>
 <p>首先我们先在a.html中建立一个iframe。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">"http://127.0.0.1:9090/b.html"</span> name=<span class="string">"postIframe"</span> onload=<span class="string">"messageLoad()"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -307,7 +307,7 @@
         <p><span>本文标题:</span><a href="/2016/08/25/postMessage-cross-domain/">html5 API postMessage跨域详解</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
         <p><span>发布时间:</span>2016年08月25日 - 14时11分</p>
-        <p><span>最后更新:</span>2016年08月25日 - 14时16分</p>
+        <p><span>最后更新:</span>2016年08月26日 - 02时37分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/25/postMessage-cross-domain/" title="html5 API postMessage跨域详解">http://blog.xieliqun.com/2016/08/25/postMessage-cross-domain/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/08/25/postMessage-cross-domain/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
