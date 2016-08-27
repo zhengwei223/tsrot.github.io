@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/index.html">
 <meta property="og:site_name" content="Tsrot Space">
 <meta property="og:description" content="作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下coding.net。">
-<meta property="og:updated_time" content="2016-08-27T13:13:51.208Z">
+<meta property="og:updated_time" content="2016-08-27T13:25:46.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折腾：coding.net IDE node环境的安装">
 <meta name="twitter:description" content="作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下coding.net。">
@@ -282,7 +282,7 @@
 <p>当你想切换回原先稳定版本时，你可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ nvm use v4.<span class="number">5.0</span></span><br></pre></td></tr></table></figure></p>
 <p>安装完node，你就可以使用node和npm了。你可以安装一些自动化工具啊，一些插件啊什么的。</p>
 <h3 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h3><p>1、这些在线IDE虽然挺方便的，但毕竟没有本地的好，还有一些安全和网络限制的问题，另外到后面可能还要收费。</p>
-<p>2、nvm问题，因为coding没有给用户root权限，所以你每次要运行node前都必须运行一下nvm。</p>
+<p>2、nvm问题，因为coding没有给用户root权限,不能够执行source /root/nvm/nvm.sh，让nvm每次启动项目自动执行。所以你每次在运行node前都必须先执行一下nvm。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ <span class="built_in">cd</span> ..</span><br><span class="line">-&gt; ~ <span class="built_in">cd</span> nvm</span><br><span class="line">-&gt; ~ <span class="built_in">source</span> ./nvm.sh</span><br></pre></td></tr></table></figure>
 <h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
       
@@ -295,7 +295,7 @@
         <p><span>本文标题:</span><a href="/2016/08/27/online-IDE-node-enviroment/">折腾：coding.net IDE node环境的安装</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
         <p><span>发布时间:</span>2016年08月27日 - 13时11分</p>
-        <p><span>最后更新:</span>2016年08月27日 - 13时13分</p>
+        <p><span>最后更新:</span>2016年08月27日 - 13时25分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/27/online-IDE-node-enviroment/" title="折腾：coding.net IDE node环境的安装">http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

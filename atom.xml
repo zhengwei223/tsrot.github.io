@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.xieliqun.com/"/>
-  <updated>2016-08-27T13:13:51.208Z</updated>
+  <updated>2016-08-27T13:25:46.101Z</updated>
   <id>http://blog.xieliqun.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/"/>
     <id>http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/</id>
     <published>2016-08-27T04:11:24.000Z</published>
-    <updated>2016-08-27T13:13:51.208Z</updated>
+    <updated>2016-08-27T13:25:46.101Z</updated>
     
     <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下&lt;a href=&quot;https://ide.coding.net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;coding.net&lt;/a&gt;。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
@@ -38,7 +38,7 @@
 &lt;p&gt;当你想切换回原先稳定版本时，你可以&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ nvm use v4.&lt;span class=&quot;number&quot;&gt;5.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;安装完node，你就可以使用node和npm了。你可以安装一些自动化工具啊，一些插件啊什么的。&lt;/p&gt;
 &lt;h3 id=&quot;一些问题&quot;&gt;&lt;a href=&quot;#一些问题&quot; class=&quot;headerlink&quot; title=&quot;一些问题&quot;&gt;&lt;/a&gt;一些问题&lt;/h3&gt;&lt;p&gt;1、这些在线IDE虽然挺方便的，但毕竟没有本地的好，还有一些安全和网络限制的问题，另外到后面可能还要收费。&lt;/p&gt;
-&lt;p&gt;2、nvm问题，因为coding没有给用户root权限，所以你每次要运行node前都必须运行一下nvm。&lt;/p&gt;
+&lt;p&gt;2、nvm问题，因为coding没有给用户root权限,不能够执行source /root/nvm/nvm.sh，让nvm每次启动项目自动执行。所以你每次在运行node前都必须先执行一下nvm。&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ..&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; nvm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; ./nvm.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;END&quot;&gt;&lt;a href=&quot;#END&quot; class=&quot;headerlink&quot; title=&quot;END&quot;&gt;&lt;/a&gt;END&lt;/h3&gt;</content>
     
