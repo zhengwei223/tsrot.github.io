@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于angular的$emit,$broadcast,$on通信机制 | Tsrot Space</title>
+  <title>折腾：coding.net IDE node环境的安装 | Tsrot Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
+  <meta name="description" content="作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下coding.net。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于angular的$emit,$broadcast,$on通信机制">
-<meta property="og:url" content="http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/index.html">
+<meta property="og:title" content="折腾：coding.net IDE node环境的安装">
+<meta property="og:url" content="http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/index.html">
 <meta property="og:site_name" content="Tsrot Space">
-<meta property="og:description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
-<meta property="og:updated_time" content="2016-07-17T11:12:46.956Z">
+<meta property="og:description" content="作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下coding.net。">
+<meta property="og:updated_time" content="2016-08-27T13:13:51.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于angular的$emit,$broadcast,$on通信机制">
-<meta name="twitter:description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
+<meta name="twitter:title" content="折腾：coding.net IDE node环境的安装">
+<meta name="twitter:description" content="作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下coding.net。">
   
     <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
   
@@ -224,11 +224,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-angular的同级通信方式详解" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-online-IDE-node-enviroment" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/01/angular的同级通信方式详解/" class="article-date">
-      <time datetime="2016-07-01T05:35:49.000Z" itemprop="datePublished">2016-07-01</time>
+      <a href="/2016/08/27/online-IDE-node-enviroment/" class="article-date">
+      <time datetime="2016-08-27T04:11:24.000Z" itemprop="datePublished">2016-08-27</time>
 </a>
     </div>
   
@@ -241,7 +241,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于angular的$emit,$broadcast,$on通信机制
+      折腾：coding.net IDE node环境的安装
     </h1>
   
 
@@ -250,13 +250,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/IDE/">IDE</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodeJS/">nodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -266,13 +266,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。<br><a id="more"></a></excerpt></p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下<a href="https://ide.coding.net" target="_blank" rel="external">coding.net</a>。<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h3 id="首先介绍一下我一开始使用时遇到的坑"><a href="#首先介绍一下我一开始使用时遇到的坑" class="headerlink" title="首先介绍一下我一开始使用时遇到的坑"></a>首先介绍一下我一开始使用时遇到的坑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=<span class="string">'parentCtrl'</span>&gt;</span><br><span class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;hr&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl1'</span>&gt;</span><br><span class="line">		controller <span class="number">1</span> &lt;p style=<span class="string">"color:red"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;br&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl2'</span>&gt;</span><br><span class="line">		controller <span class="number">2</span> &lt;p style=<span class="string">"color:green"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myapp'</span>,[]);</span><br><span class="line">	app.controller(<span class="string">'parentCtrl'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello parent controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'23'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChange'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			console.log(<span class="string">"收到childCtrl1冒泡过来的数据"</span>,event);</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			<span class="variable">$scope</span>.<span class="variable">$broadcast</span>(<span class="string">'ageChangeA'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl1'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child1 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'25'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'age'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			console.log(<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$emit</span>(<span class="string">'ageChange'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl2'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child2 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'30'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChangeA'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			console.log(<span class="string">"收到parentCtrl广播过来的数据"</span>,event)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>1，childCtrl1可以触发ageChange事件并向父级传递。<br>2，父级parentCtrl也可以监听到ageChange事件，然后向子级广播ageChangeA事件（现在问题来了）。<br>3，childCtrl2不能够监听到ageChangeA事件（这是为什么呢？）。<br>-&gt; 收到childCtrl1冒泡过来的数据 Object {name: “ageChange”, targetScope: a, defaultPrevented: false, currentScope: g}</p>
-<h3 id="正确使用并填坑"><a href="#正确使用并填坑" class="headerlink" title="正确使用并填坑"></a>正确使用并填坑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-controller=<span class="string">'parentCtrl'</span>&gt;</span><br><span class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;hr&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl1'</span>&gt;</span><br><span class="line">		controller <span class="number">1</span> &lt;p style=<span class="string">"color:red"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span> ng-change=<span class="string">"change()"</span>&gt;      //ng-change事件触发</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;br&gt;</span><br><span class="line">	&lt;div ng-controller=<span class="string">'childCtrl2'</span>&gt;</span><br><span class="line">		controller <span class="number">2</span> &lt;p style=<span class="string">"color:green"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myapp'</span>,[]);</span><br><span class="line">	app.controller(<span class="string">'parentCtrl'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello parent controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'23'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChange'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			console.log(<span class="string">"收到childCtrl1冒泡过来的数据"</span>,event);</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			<span class="variable">$scope</span>.<span class="variable">$broadcast</span>(<span class="string">'ageChangeA'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl1'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child1 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'25'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'age'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			console.log(<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="variable">$scope</span>.change = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="variable">$scope</span>.<span class="variable">$emit</span>(<span class="string">'ageChange'</span>,<span class="variable">$scope</span>.age);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;]);</span><br><span class="line">	app.controller(<span class="string">'childCtrl2'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</span><br><span class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child2 controller'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.age = <span class="string">'30'</span>;</span><br><span class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChangeA'</span>,<span class="keyword">function</span>(event,data)&#123;</span><br><span class="line">			<span class="variable">$scope</span>.age = data;</span><br><span class="line">			console.log(<span class="string">"收到parentCtrl广播过来的数据"</span>,event);</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>对比上面两段代码细心的人应该已经发现了问题的所在。<br>$emit，$broadcast其中一个必须要有事件触发，否则子级中的$on将不能识别该事件。<br>-&gt; 收到childCtrl1冒泡过来的数据 Object {name: “ageChange”, targetScope: a, defaultPrevented: false, currentScope: g}<br>-&gt; 收到parentCtrl广播过来的数据 Object {name: “ageChangeA”, targetScope: g, defaultPrevented: false, currentScope: a}</p>
-
+<h3 id="IDE介绍"><a href="#IDE介绍" class="headerlink" title="IDE介绍"></a>IDE介绍</h3><p>以前我一直在用<a href="https://nitrous.io" target="_blank" rel="external">nitrous.io</a>的在线IDE，它是一个国外的在线IDE，访问有点慢，一旦网络不好就掉线，挺好的地方就是，它每个月有50个小时的免费使用。coding.net相当于是一个国内版的github，也是一个远程的git仓库，它有个在线IDE还挺好用的。有终端命令面板、支持vim和 Emacs的编辑器、在线运行环境、支持git（哎，帮别人做广告了，不知道coding能不能发我点稿费）。</p>
+<p>下面进入主题。</p>
+<h3 id="安装nvm"><a href="#安装nvm" class="headerlink" title="安装nvm"></a>安装nvm</h3><p>nvm是nodejs版本管理工具。可以在多个nodejs版本中进行切换，降低了升级nodejs时的成本。</p>
+<p>下载nvm，直接在终端面板把它clone过来就行了。为了不影响项目目录，我们把它clone在项目根目录的同级目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ <span class="built_in">cd</span> ..</span><br><span class="line">-&gt; ~ git <span class="built_in">clone</span> https://github.com/creationix/nvm.git</span><br></pre></td></tr></table></figure></p>
+<p>接下来，进入nvm目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ <span class="built_in">cd</span> nvm</span><br></pre></td></tr></table></figure></p>
+<p>安装nvm<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ ./install.sh</span><br></pre></td></tr></table></figure></p>
+<p>安装完后，让系统自动执行它<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ <span class="built_in">source</span> ./nvm.sh</span><br></pre></td></tr></table></figure></p>
+<p>现在就可以使用nvm命令了，查看一下help<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ nvm -help</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装nodeJS"><a href="#安装nodeJS" class="headerlink" title="安装nodeJS"></a>安装nodeJS</h3><p>查看可以安装的nodejs版本，这里将会输出一大堆可供安装的nodejs版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ nvm ls-remote</span><br></pre></td></tr></table></figure></p>
+<p>选择一个进行安装，我安装的是v4.5.0<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ nvm install v4.<span class="number">5.0</span></span><br></pre></td></tr></table></figure></p>
+<p>当然你可以安装多个版本，例如我还要安装最新版本，测试一下它的新特性<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ nvm install v6.<span class="number">4.0</span></span><br></pre></td></tr></table></figure></p>
+<p>当你想切换回原先稳定版本时，你可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ nvm use v4.<span class="number">5.0</span></span><br></pre></td></tr></table></figure></p>
+<p>安装完node，你就可以使用node和npm了。你可以安装一些自动化工具啊，一些插件啊什么的。</p>
+<h3 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h3><p>1、这些在线IDE虽然挺方便的，但毕竟没有本地的好，还有一些安全和网络限制的问题，另外到后面可能还要收费。</p>
+<p>2、nvm问题，因为coding没有给用户root权限，所以你每次要运行node前都必须运行一下nvm。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt; ~ <span class="built_in">cd</span> ..</span><br><span class="line">-&gt; ~ <span class="built_in">cd</span> nvm</span><br><span class="line">-&gt; ~ <span class="built_in">source</span> ./nvm.sh</span><br></pre></td></tr></table></figure>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
       
     </div>
     
@@ -280,13 +292,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/01/angular的同级通信方式详解/">关于angular的$emit,$broadcast,$on通信机制</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/27/online-IDE-node-enviroment/">折腾：coding.net IDE node环境的安装</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
-        <p><span>发布时间:</span>2016年07月01日 - 14时35分</p>
-        <p><span>最后更新:</span>2016年07月17日 - 11时12分</p>
+        <p><span>发布时间:</span>2016年08月27日 - 13时11分</p>
+        <p><span>最后更新:</span>2016年08月27日 - 13时13分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/01/angular的同级通信方式详解/" title="关于angular的$emit,$broadcast,$on通信机制">http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/27/online-IDE-node-enviroment/" title="折腾：coding.net IDE node环境的安装">http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -299,16 +311,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/07/17/移动端页面重构/">
-                    移动端页面重构
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/17/busy/">
-                    busy
+                <a href="/2016/08/25/windowName-cross-domain/">
+                    window.name跨域详解
                 </a>
             </div>
         
@@ -319,7 +325,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先介绍一下我一开始使用时遇到的坑"><span class="toc-number">1.</span> <span class="toc-text">首先介绍一下我一开始使用时遇到的坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确使用并填坑"><span class="toc-number">2.</span> <span class="toc-text">正确使用并填坑</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#IDE介绍"><span class="toc-number">1.</span> <span class="toc-text">IDE介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nvm"><span class="toc-number">2.</span> <span class="toc-text">安装nvm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodeJS"><span class="toc-number">3.</span> <span class="toc-text">安装nodeJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些问题"><span class="toc-number">4.</span> <span class="toc-text">一些问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#END"><span class="toc-number">5.</span> <span class="toc-text">END</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -383,7 +389,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/07/01/angular的同级通信方式详解/" data-title="关于angular的$emit,$broadcast,$on通信机制" data-url="http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/27/online-IDE-node-enviroment/" data-title="折腾：coding.net IDE node环境的安装" data-url="http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -407,15 +413,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/17/移动端页面重构/" title="上一篇: 移动端页面重构">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/17/busy/" title="下一篇: busy">
+            <a href="/2016/08/25/windowName-cross-domain/" title="下一篇: window.name跨域详解">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.xieliqun.com/"/>
-  <updated>2016-08-26T02:38:47.876Z</updated>
+  <updated>2016-08-27T13:13:51.208Z</updated>
   <id>http://blog.xieliqun.com/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>折腾：coding.net IDE node环境的安装</title>
+    <link href="http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/"/>
+    <id>http://blog.xieliqun.com/2016/08/27/online-IDE-node-enviroment/</id>
+    <published>2016-08-27T04:11:24.000Z</published>
+    <updated>2016-08-27T13:13:51.208Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下&lt;a href=&quot;https://ide.coding.net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;coding.net&lt;/a&gt;。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
+&lt;h3 id=&quot;IDE介绍&quot;&gt;&lt;a href=&quot;#IDE介绍&quot; class=&quot;headerlink&quot; title=&quot;IDE介绍&quot;&gt;&lt;/a&gt;IDE介绍&lt;/h3&gt;&lt;p&gt;以前我一直在用&lt;a href=&quot;https://nitrous.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nitrous.io&lt;/a&gt;的在线IDE，它是一个国外的在线IDE，访问有点慢，一旦网络不好就掉线，挺好的地方就是，它每个月有50个小时的免费使用。coding.net相当于是一个国内版的github，也是一个远程的git仓库，它有个在线IDE还挺好用的。有终端命令面板、支持vim和 Emacs的编辑器、在线运行环境、支持git（哎，帮别人做广告了，不知道coding能不能发我点稿费）。&lt;/p&gt;
+&lt;p&gt;下面进入主题。&lt;/p&gt;
+&lt;h3 id=&quot;安装nvm&quot;&gt;&lt;a href=&quot;#安装nvm&quot; class=&quot;headerlink&quot; title=&quot;安装nvm&quot;&gt;&lt;/a&gt;安装nvm&lt;/h3&gt;&lt;p&gt;nvm是nodejs版本管理工具。可以在多个nodejs版本中进行切换，降低了升级nodejs时的成本。&lt;/p&gt;
+&lt;p&gt;下载nvm，直接在终端面板把它clone过来就行了。为了不影响项目目录，我们把它clone在项目根目录的同级目录。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ..&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/creationix/nvm.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;接下来，进入nvm目录&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; nvm&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装nvm&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ ./install.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装完后，让系统自动执行它&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; ./nvm.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;现在就可以使用nvm命令了，查看一下help&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ nvm -help&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;安装nodeJS&quot;&gt;&lt;a href=&quot;#安装nodeJS&quot; class=&quot;headerlink&quot; title=&quot;安装nodeJS&quot;&gt;&lt;/a&gt;安装nodeJS&lt;/h3&gt;&lt;p&gt;查看可以安装的nodejs版本，这里将会输出一大堆可供安装的nodejs版本&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ nvm ls-remote&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;选择一个进行安装，我安装的是v4.5.0&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ nvm install v4.&lt;span class=&quot;number&quot;&gt;5.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;当然你可以安装多个版本，例如我还要安装最新版本，测试一下它的新特性&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ nvm install v6.&lt;span class=&quot;number&quot;&gt;4.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;当你想切换回原先稳定版本时，你可以&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ nvm use v4.&lt;span class=&quot;number&quot;&gt;5.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装完node，你就可以使用node和npm了。你可以安装一些自动化工具啊，一些插件啊什么的。&lt;/p&gt;
+&lt;h3 id=&quot;一些问题&quot;&gt;&lt;a href=&quot;#一些问题&quot; class=&quot;headerlink&quot; title=&quot;一些问题&quot;&gt;&lt;/a&gt;一些问题&lt;/h3&gt;&lt;p&gt;1、这些在线IDE虽然挺方便的，但毕竟没有本地的好，还有一些安全和网络限制的问题，另外到后面可能还要收费。&lt;/p&gt;
+&lt;p&gt;2、nvm问题，因为coding没有给用户root权限，所以你每次要运行node前都必须运行一下nvm。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ..&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; nvm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&amp;gt; ~ &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; ./nvm.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;END&quot;&gt;&lt;a href=&quot;#END&quot; class=&quot;headerlink&quot; title=&quot;END&quot;&gt;&lt;/a&gt;END&lt;/h3&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;作为一个码农，我们经常会有这样一个痛点：项目出现一个紧急bug，但自己又不在公司，怎办呢？虽然项目可能在git或者svn上，但clone下来安装测试环境也是个麻烦的是啊。于是，我们想到了在线IDE。作为一个前端开发者nodeJS环境是非常重要的，今天花了一个多小时折腾了下&lt;a href=&quot;https://ide.coding.net&quot;&gt;coding.net&lt;/a&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IDE" scheme="http://blog.xieliqun.com/categories/IDE/"/>
+    
+    
+      <category term="nodeJS" scheme="http://blog.xieliqun.com/tags/nodeJS/"/>
+    
+      <category term="折腾" scheme="http://blog.xieliqun.com/tags/%E6%8A%98%E8%85%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>window.name跨域详解</title>
@@ -774,35 +816,6 @@
     
     
       <category term="前端分页" scheme="http://blog.xieliqun.com/tags/%E5%89%8D%E7%AB%AF%E5%88%86%E9%A1%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的户外运动之登深圳梧桐山</title>
-    <link href="http://blog.xieliqun.com/2016/03/06/%E6%88%91%E7%9A%84%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8%E4%B9%8B%E7%99%BB%E6%B7%B1%E5%9C%B3%E6%A2%A7%E6%A1%90%E5%B1%B1/"/>
-    <id>http://blog.xieliqun.com/2016/03/06/我的户外运动之登深圳梧桐山/</id>
-    <published>2016-03-06T05:20:51.000Z</published>
-    <updated>2016-03-07T14:11:50.279Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;曾经听过一句话，但不知道是哪里看到的了，这句话是这么讲的：要么读书、要么旅行，灵魂和身体，必须有一个在路上。以前不以为然，现在我有点理解了。作为一个人一定要有一点自己的信仰、有一点敬畏、有一块永远不容人玷污的的净土。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;/the&gt;&lt;/p&gt;
-&lt;h3 id=&quot;和同事登梧桐山&quot;&gt;&lt;a href=&quot;#和同事登梧桐山&quot; class=&quot;headerlink&quot; title=&quot;和同事登梧桐山&quot;&gt;&lt;/a&gt;和同事登梧桐山&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457187443433.jpg&quot; alt=&quot;wutongshan-3&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160306221104.jpg&quot; alt=&quot;wutongshan-1&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457187491881.jpg&quot; alt=&quot;wutongshan-2&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/IMG_20160305_101158.jpg&quot; alt=&quot;wutongshan-4&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/IMG_20160305_103834.jpg&quot; alt=&quot;wutongshan-5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/IMG_20160305_131836.jpg&quot; alt=&quot;wutongshan-6&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/IMG_20160305_155539.jpg&quot; alt=&quot;wutongshan-7&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/IMG_20160305_163639.jpg&quot; alt=&quot;wutongshan-8&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457161617986.jpg&quot; alt=&quot;wutongshan-9&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457161638417.jpg&quot; alt=&quot;wutongshan-10&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457187317147.jpg&quot; alt=&quot;wutongshan-11&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xqcdm.com1.z0.glb.clouddn.com/mmexport1457187357173.jpg&quot; alt=&quot;wutongshan-12&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;曾经听过一句话，但不知道是哪里看到的了，这句话是这么讲的：要么读书、要么旅行，灵魂和身体，必须有一个在路上。以前不以为然，现在我有点理解了。作为一个人一定要有一点自己的信仰、有一点敬畏、有一块永远不容人玷污的的净土。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="我的爱好" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/"/>
-    
-      <category term="我的日志" scheme="http://blog.xieliqun.com/categories/%E6%88%91%E7%9A%84%E7%88%B1%E5%A5%BD/%E6%88%91%E7%9A%84%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="我的相册" scheme="http://blog.xieliqun.com/tags/%E6%88%91%E7%9A%84%E7%9B%B8%E5%86%8C/"/>
-    
-      <category term="户外运动" scheme="http://blog.xieliqun.com/tags/%E6%88%B7%E5%A4%96%E8%BF%90%E5%8A%A8/"/>
     
   </entry>
   
