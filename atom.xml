@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.xieliqun.com/"/>
-  <updated>2016-09-21T02:20:25.707Z</updated>
+  <updated>2016-09-21T02:24:57.948Z</updated>
   <id>http://blog.xieliqun.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>yeoman chinese website</title>
+    <title>Yeoman 中文网</title>
     <link href="http://blog.xieliqun.com/2016/09/20/yeoman-chinese-website/"/>
     <id>http://blog.xieliqun.com/2016/09/20/yeoman-chinese-website/</id>
     <published>2016-09-20T16:51:50.000Z</published>
-    <updated>2016-09-21T02:20:25.707Z</updated>
+    <updated>2016-09-21T02:24:57.948Z</updated>
     
     <content type="html">&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;如今前端的项目变得越来越庞大，靠人工手动终究不符合现代化技术发展的趋势。作为一名前端开发人员，我们需要更加自动化的coding。由于国内关于Yeoman的技术资料还是比较少，而且比较基础，比较过时，所以前段时间，我把Yeoman官网，翻译成了中文：www.yowebapp.com。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;the rest=&quot;&quot; of=&quot;&quot; contents=&quot;&quot; |=&quot;&quot; 余下全文=&quot;&quot;&gt;&lt;br&gt;Yeoman是一个比较好的前端解决方案，它优化了前端开发的工作流，让前端开发人员更加专注业务代码的开发，像什么项目构建、代码校验、项目测试等，这些都交给Yeoman来做。&lt;/the&gt;&lt;/p&gt;
